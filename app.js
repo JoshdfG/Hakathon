@@ -75,14 +75,6 @@ function updateProgressBarAndCheckbox() {
   const checkedCheckboxes = document.querySelectorAll(".checkbox:checked");
   const progressWidth = (checkedCheckboxes.length / checkboxes.length) * 72;
   progressBar.style.width = `${progressWidth}px`;
-
-  checkboxes.forEach((checkbox) => {
-    if (checkbox.checked) {
-      progressBar.style.backgroundColor = "#222";
-    } else {
-      checkbox.style.backgroundColor = "#e3e3e3";
-    }
-  });
 }
 
 const completionCount = document.getElementById("completionCount");
@@ -98,4 +90,31 @@ function updateProgressBarAndCheckbox() {
 
   progressBar.style.width = `${progressWidth}%`;
   completionCount.textContent = `${numChecked}/5 Completed`;
+}
+
+const checkboxGroups = document.querySelectorAll(".checkbox-group");
+
+checkboxGroups.forEach((group) => {
+  const checkboxes = group.querySelectorAll(".checkbox");
+  const moreDivs = group.querySelectorAll(".more");
+
+  checkboxes.forEach((checkbox, index) => {
+    checkbox.addEventListener("change", () =>
+      toggleMoreDiv(checkboxes, moreDivs, index)
+    );
+  });
+});
+
+function toggleMoreDiv(checkboxes, moreDivs, index) {
+  checkboxes[index].checked
+    ? showMoreDiv(moreDivs[index])
+    : hideMoreDiv(moreDivs[index]);
+}
+
+function showMoreDiv(moreDiv) {
+  moreDiv.classList.remove("hidden");
+}
+
+function hideMoreDiv(moreDiv) {
+  moreDiv.classList.add("hidden");
 }

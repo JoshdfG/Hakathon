@@ -288,6 +288,7 @@ nav {
   border-radius: 5px;
   transition: width 0.3s ease-in-out;
 }
+
 /* Tablet Styles */
 
 @media only screen and (min-width: 830px) and (max-width: 1024px) {
@@ -476,8 +477,7 @@ nav {
     line-height: 140%;
   }
 }
-.links {
-}
+
 .links-container {
   display: flex;
   align-items: center;
@@ -488,6 +488,59 @@ nav {
   padding: 8px;
   font-weight: 500;
   line-height: 140%;
+}
+.more {
+  color: var(--font-mid-2, #616161);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 18.2px */
+  /* width: 326px; */
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  padding-left: 43px;
+  padding: auto;
+}
+.btn-cus {
+  display: flex;
+  padding: 6px 12px;
+  margin-left: 2px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: #404040;
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+    0px 2px 0px 0px #000;
+  color: #f6f3f6;
+}
+.btn-cus:hover {
+  border-radius: 6px;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: #2a2a2a;
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+    0px 2px 0px 0px #000;
+}
+.btn-cus:active {
+  border-radius: 6px;
+  background: #2b2b2b;
+
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 3px 0px 0px #000 inset;
+}
+.btn-cus:focus {
+  border-radius: 6px;
+  border-top: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+  border-right: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+  border-left: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+  background: #404040;
+  box-shadow: 0px 0px 0px 3px #005bd3, 0px 0px 0px 3px #fff,
+    0px 0px 0px 1.5px #333;
 }
 .progress {
   margin-bottom: 16px;
@@ -532,6 +585,7 @@ nav {
 }
 .hidden {
   display: none;
+  transition: var(--transition);
 }
 /* .not-completed{
 
