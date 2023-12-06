@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Progress bar
 const checkboxes = document.querySelectorAll(".checkbox");
 const progressBar = document.querySelector(".progress-bar");
 
@@ -95,31 +97,42 @@ function updateProgressBarAndCheckbox() {
 //checkbox
 
 const checkboxGroups = document.querySelectorAll(".checkbox-group");
-const linksContainer = document.querySelectorAll(".links-container");
+
 checkboxGroups.forEach((group) => {
   const checkboxes = group.querySelectorAll(".checkbox");
   const moreDivs = group.querySelectorAll(".more");
+  const linksContainers = group.querySelectorAll(".links-container");
 
   checkboxes.forEach((checkbox, index) => {
     checkbox.addEventListener("change", () =>
-      toggleMoreDiv(checkboxes, moreDivs, index)
+      toggleMoreDiv(checkboxes, moreDivs, linksContainers, index)
     );
   });
 });
 
-function toggleMoreDiv(checkboxes, moreDivs, index) {
-  checkboxes[index].checked
-    ? showMoreDiv(moreDivs[index])
-    : hideMoreDiv(moreDivs[index]);
+function toggleMoreDiv(checkboxes, moreDivs, linksContainers, index) {
+  if (checkboxes[index].checked) {
+    showMoreDiv(moreDivs[index]);
+    changeLinksContainerColor(linksContainers[index], "color");
+    moreDivs[index].classList.add("color");
+  } else {
+    hideMoreDiv(moreDivs[index]);
+    changeLinksContainerColor(linksContainers[index], "");
+    moreDivs[index].classList.remove("color");
+  }
 }
 
+// more div toggle
 function showMoreDiv(moreDiv) {
   moreDiv.classList.remove("hidden");
-  linksContainer.style.backgroundColor("#333");
 }
 
 function hideMoreDiv(moreDiv) {
   moreDiv.classList.add("hidden");
+}
+
+function changeLinksContainerColor(linksContainer, colorClass) {
+  linksContainer.classList.toggle("color", colorClass !== "");
 }
 
 // icon toggle

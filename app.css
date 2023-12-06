@@ -38,6 +38,8 @@ body {
   font-family: "Inter";
   font-style: normal;
   background-color: var(--clr-bg);
+  scroll-behavior: smooth;
+  transition: var(--transition);
 }
 
 nav {
