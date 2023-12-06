@@ -118,3 +118,14 @@ function showMoreDiv(moreDiv) {
 function hideMoreDiv(moreDiv) {
   moreDiv.classList.add("hidden");
 }
+
+const toggleIcon = document.querySelector(".toggle-icon");
+const checkboxGroup = document.querySelector(".checkbox-group");
+const openIcon = document.querySelector(".open-icon");
+const closeIcon = document.querySelector(".close-icon");
+
+toggleIcon.addEventListener("click", () => {
+  checkboxGroup.classList.toggle("hidden");
+  openIcon.classList.toggle("hidden");
+  closeIcon.classList.toggle("hidden");
+});
