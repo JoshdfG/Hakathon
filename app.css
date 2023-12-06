@@ -843,3 +843,6 @@ nav {
   color: #e3e3e3;
   cursor: pointer;
 }
+.hidden {
+  display: none;
+}
