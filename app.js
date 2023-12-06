@@ -92,8 +92,10 @@ function updateProgressBarAndCheckbox() {
   completionCount.textContent = `${numChecked}/5 Completed`;
 }
 
-const checkboxGroups = document.querySelectorAll(".checkbox-group");
+//checkbox
 
+const checkboxGroups = document.querySelectorAll(".checkbox-group");
+const linksContainer = document.querySelectorAll(".links-container");
 checkboxGroups.forEach((group) => {
   const checkboxes = group.querySelectorAll(".checkbox");
   const moreDivs = group.querySelectorAll(".more");
@@ -113,11 +115,14 @@ function toggleMoreDiv(checkboxes, moreDivs, index) {
 
 function showMoreDiv(moreDiv) {
   moreDiv.classList.remove("hidden");
+  linksContainer.style.backgroundColor("#333");
 }
 
 function hideMoreDiv(moreDiv) {
   moreDiv.classList.add("hidden");
 }
+
+// icon toggle
 
 const toggleIcon = document.querySelector(".toggle-icon");
 const checkboxGroup = document.querySelector(".checkbox-group");

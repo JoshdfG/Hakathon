@@ -352,8 +352,7 @@ nav {
     gap: 8px;
     flex: 1 0 0;
   }
-  .belt-container {
-  }
+
   .belt {
     display: flex;
     flex-shrink: 0;
@@ -482,6 +481,10 @@ nav {
   display: flex;
   align-items: center;
   color: #303030;
+  /* background-color: #f3f3f3; */
+  align-self: stretch;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   font-family: Inter;
   font-size: 13px;
   font-style: normal;
@@ -489,10 +492,16 @@ nav {
   font-weight: 500;
   line-height: 140%;
 }
+.color {
+  background-color: #f3f3f3;
+}
 .more {
   color: var(--font-mid-2, #616161);
   font-family: Inter;
   font-size: 13px;
+  /* background-color: #f3f3f3; */
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   font-style: normal;
   font-weight: 500;
   transition: 0.3s ease-in-out;
