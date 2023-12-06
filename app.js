@@ -30,9 +30,7 @@ searchComponent.addEventListener("blur", function () {
 // Function to handle checkbox click
 function handleCheckboxClick(event) {
   const checkboxId = event.target.getAttribute("data-id");
-  // Perform actions based on the checkbox clicked
   console.log(`Checkbox with ID ${checkboxId} was clicked`);
-  // Add your logic here based on the checkbox clicked
 }
 
 // Attach click event listeners to each checkbox
@@ -59,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
         loading.classList.remove("hidden");
 
         loading.classList.add("hidden");
-        // Hide loading icon after 200 milliseconds
       }
     });
   });
