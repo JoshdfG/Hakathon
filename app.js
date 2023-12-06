@@ -147,3 +147,18 @@ toggleIcon.addEventListener("click", () => {
   openIcon.classList.toggle("hidden");
   closeIcon.classList.toggle("hidden");
 });
+
+// img delete toggle
+const img = document.querySelector(".img");
+const teext = document.querySelector(".teext");
+
+img.addEventListener("click", () => {
+  teext.classList.toggle("hidden");
+});
+
+const extend = document.querySelector(".extend");
+const imgz = document.querySelector(".imgz");
+
+imgz.addEventListener("click", () => {
+  extend.classList.toggle("hidden");
+});
