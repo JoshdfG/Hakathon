@@ -271,16 +271,21 @@ nav {
   /* padding: 0px 8px; */
 }
 .progress-container {
-  /* margin-top: 20px; */
+  position: relative;
+  width: 72px; /* Same as the width of the progress bar */
+  height: 4px;
+  background-color: #e3e3e3; /* Permanent background color */
+  border-radius: 5px;
 }
 
 .progress-bar {
-  /* background-color: #222; */
-  background-color: #e3e3e3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #222; /* Initial progress bar color */
   border-radius: 5px;
-  margin-left: 2px;
-  width: 72px;
-  height: 4px;
   transition: width 0.3s ease-in-out;
 }
 /* Tablet Styles */

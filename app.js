@@ -64,31 +64,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+const checkboxes = document.querySelectorAll(".checkbox");
+const progressBar = document.querySelector(".progress-bar");
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const checkboxes = document.querySelectorAll('.checkbox');
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", updateProgressBarAndCheckbox);
+});
 
-//   checkboxes.forEach((checkbox) => {
-//     const notCompletedIcon = checkbox.querySelector(".not-completed-icon");
-//     const completed = checkbox.querySelector(".completed");
-//     const loading = checkbox.querySelector(".loading");
+function updateProgressBarAndCheckbox() {
+  const checkedCheckboxes = document.querySelectorAll(".checkbox:checked");
+  const progressWidth = (checkedCheckboxes.length / checkboxes.length) * 72;
+  progressBar.style.width = `${progressWidth}px`;
 
-//     checkbox.addEventListener("change", function () {
-//       if (checkbox.checked) {
-//         notCompletedIcon.classList.add("hidden");
-//         loading.classList.remove("hidden");
-//         setTimeout(() => {
-//           completed.classList.remove("hidden");
-//           loading.classList.add("hidden");
-//         }, 200); // Show completed icon after 200 milliseconds
-//       } else {
-//         completed.classList.add("hidden");
-//         notCompletedIcon.classList.remove("hidden");
-//         loading.classList.remove("hidden");
-//         setTimeout(() => {
-//           loading.classList.add("hidden");
-//         }, 200); // Hide loading icon after 200 milliseconds
-//       }
-//     });
-//   });
-// });
+  checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      progressBar.style.backgroundColor = "#222";
+    } else {
+      checkbox.style.backgroundColor = "#e3e3e3";
+    }
+  });
+}
+
+const completionCount = document.getElementById("completionCount");
+
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", updateProgressBarAndCheckbox);
+});
+
+function updateProgressBarAndCheckbox() {
+  const checkedCheckboxes = document.querySelectorAll(".checkbox:checked");
+  const numChecked = checkedCheckboxes.length;
+  const progressWidth = (numChecked / checkboxes.length) * 100;
+
+  progressBar.style.width = `${progressWidth}%`;
+  completionCount.textContent = `${numChecked}/5 Completed`;
+}
