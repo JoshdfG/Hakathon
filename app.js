@@ -27,27 +27,68 @@ searchComponent.addEventListener("blur", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const checkbox = document.querySelector("#checkbox");
-  const notCompletedIcon = document.querySelector("#not-completed-icon");
-  const completed = document.querySelector("#completed");
-  const loading = document.querySelector("#loading");
+// Function to handle checkbox click
+function handleCheckboxClick(event) {
+  const checkboxId = event.target.getAttribute("data-id");
+  // Perform actions based on the checkbox clicked
+  console.log(`Checkbox with ID ${checkboxId} was clicked`);
+  // Add your logic here based on the checkbox clicked
+}
 
-  checkbox.addEventListener("change", function () {
-    if (checkbox.checked) {
-      notCompletedIcon.classList.add("hidden");
-      loading.classList.remove("hidden");
-      setTimeout(() => {
-        completed.classList.remove("hidden");
+// Attach click event listeners to each checkbox
+document.addEventListener("DOMContentLoaded", function () {
+  const checkboxContainers = document.querySelectorAll(".links-container");
+
+  checkboxContainers.forEach((container) => {
+    const checkbox = container.querySelector(".checkbox");
+    const notCompletedIcon = container.querySelector("#not-completed-icon");
+    const completed = container.querySelector("#completed");
+    const loading = container.querySelector("#loading");
+
+    checkbox.addEventListener("change", function () {
+      if (checkbox.checked) {
+        notCompletedIcon.classList.add("hidden");
+        loading.classList.remove("hidden");
+        setTimeout(() => {
+          completed.classList.remove("hidden");
+          loading.classList.add("hidden");
+        }, 200); // Show completed icon after 200 milliseconds
+      } else {
+        completed.classList.add("hidden");
+        notCompletedIcon.classList.remove("hidden");
+        loading.classList.remove("hidden");
+
         loading.classList.add("hidden");
-      }, 200); // Show completed icon after 2 milliseconds
-    } else {
-      completed.classList.add("hidden");
-      notCompletedIcon.classList.remove("hidden");
-      loading.classList.remove("hidden");
-      setTimeout(() => {
-        loading.classList.add("hidden");
-      }, 2); // Hide loading icon after 2 milliseconds
-    }
+        // Hide loading icon after 200 milliseconds
+      }
+    });
   });
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const checkboxes = document.querySelectorAll('.checkbox');
+
+//   checkboxes.forEach((checkbox) => {
+//     const notCompletedIcon = checkbox.querySelector(".not-completed-icon");
+//     const completed = checkbox.querySelector(".completed");
+//     const loading = checkbox.querySelector(".loading");
+
+//     checkbox.addEventListener("change", function () {
+//       if (checkbox.checked) {
+//         notCompletedIcon.classList.add("hidden");
+//         loading.classList.remove("hidden");
+//         setTimeout(() => {
+//           completed.classList.remove("hidden");
+//           loading.classList.add("hidden");
+//         }, 200); // Show completed icon after 200 milliseconds
+//       } else {
+//         completed.classList.add("hidden");
+//         notCompletedIcon.classList.remove("hidden");
+//         loading.classList.remove("hidden");
+//         setTimeout(() => {
+//           loading.classList.add("hidden");
+//         }, 200); // Hide loading icon after 200 milliseconds
+//       }
+//     });
+//   });
+// });

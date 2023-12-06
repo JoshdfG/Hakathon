@@ -471,6 +471,8 @@ nav {
     line-height: 140%;
   }
 }
+.links {
+}
 .links-container {
   display: flex;
   align-items: center;
