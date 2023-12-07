@@ -55,7 +55,32 @@ nav {
   border: 1px solid #e1e1e1;
   background: var #303030;
 }
-.input:active,
+/* .input:active {
+  border: 2px solid #fff;
+  background: #303030;
+} */
+.input:active {
+  border: 2px solid #fff;
+  background: #303030;
+}
+
+.input-cursor::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .input:focus {
   border: 2px solid #fff;
   background: #303030;
@@ -65,13 +90,13 @@ nav {
   border: none;
   outline: none;
 }
-#seacrhComponent:empty:before {
+# #searchComponent:empty:before {
   content: attr(placeholder);
   color: #999;
   border: none;
   outline: none;
 }
-#seacrhComponent:focus {
+#searchComponent:focus {
   border: none;
   outline: none;
 }
@@ -263,12 +288,11 @@ nav {
 }
 .progress p {
   color: #303030;
-  /* Text-12/regular */
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130%; /* 15.6px */
+  line-height: 130%;
 }
 .progress {
   display: flex;
@@ -325,7 +349,7 @@ nav {
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 130%; /* 15.6px */
+    line-height: 130%;
   }
 
   .dc-lg {
@@ -341,8 +365,6 @@ nav {
     text-align: center;
     leading-trim: both;
     text-edge: cap;
-
-    /* Text-12/medium */
     font-family: Inter;
     font-size: 12px;
     font-style: normal;
@@ -615,17 +637,8 @@ nav {
 }
 .hidden {
   display: none;
-  /* transition: 0.5s ease-in; */
 }
-/* .not-completed{
 
-}
-.completed{
-
-}
-.loading{
-
-} */
 /* Desktop and Big Screens */
 
 @media only screen and (min-width: 1025px) {
@@ -685,12 +698,11 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Text-12/medium */
     font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 130%; /* 15.6px */
+    line-height: 130%;
   }
   .dc-lg {
     display: flex;
@@ -721,8 +733,7 @@ nav {
     gap: 8px;
     flex: 1 0 0;
   }
-  .belt-container {
-  }
+
   .belt {
     display: flex;
     flex-shrink: 0;

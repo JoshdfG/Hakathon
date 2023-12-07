@@ -9,14 +9,35 @@ searchComponent.addEventListener("focus", function () {
     this.textContent = "";
     this.classList.remove("placeholder");
   }
+  this.classList.add("input-cursor");
 });
 
 // Clear content on click (focus)
+searchComponent.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    handleEnterKey();
+  }
+});
+function handleEnterKey() {
+  // Your logic when Enter key is pressed
+  // For example, prevent the default behavior entirely or do something else
+}
+
 searchComponent.addEventListener("mousedown", function () {
   if (this.textContent === placeholderText) {
     this.textContent = "";
     this.classList.remove("placeholder");
+    this.classList.add("input-cursor");
   }
+  // this.classList.add("input");
+
+  // const handleMouseUp = () => {
+  //   this.classList.remove("input");
+  //   document.removeEventListener("mouseup", handleMouseUp);
+  // };
+
+  // document.addEventListener("mouseup", handleMouseUp);
 });
 
 // Display placeholder when content is empty on blur
@@ -25,6 +46,7 @@ searchComponent.addEventListener("blur", function () {
     this.classList.add("placeholder");
     this.textContent = placeholderText;
   }
+  this.classList.remove("input-cursor");
 });
 
 // Function to handle checkbox click
