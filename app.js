@@ -55,6 +55,18 @@ function handleCheckboxClick(event) {
   console.log(`Checkbox with ID ${checkboxId} was clicked`);
 }
 
+//dropdown
+const dropDown = document.querySelector(".dropdown");
+const btnDc = document.querySelector(".btn-dc");
+const btnD = document.querySelector(".btn-d");
+
+btnDc.addEventListener("click", function () {
+  dropDown.classList.toggle("hidden");
+});
+btnD.addEventListener("click", function () {
+  dropDown.classList.toggle("hidden");
+});
+
 // Attach click event listeners to each checkbox
 document.addEventListener("DOMContentLoaded", function () {
   const checkboxContainers = document.querySelectorAll(".links-container");
