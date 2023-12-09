@@ -4,6 +4,7 @@ const placeholderText = "Search";
 searchComponent.textContent = placeholderText;
 searchComponent.classList.add("placeholder");
 
+// Clear content on click (focus)
 searchComponent.addEventListener("focus", function () {
   if (this.textContent === placeholderText) {
     this.textContent = "";
@@ -12,47 +13,26 @@ searchComponent.addEventListener("focus", function () {
   this.classList.add("input-cursor");
 });
 
-// Clear content on click (focus)
-searchComponent.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    handleEnterKey();
-  }
-});
-function handleEnterKey() {
-  // Your logic when Enter key is pressed
-  // For example, prevent the default behavior entirely or do something else
-}
-
-searchComponent.addEventListener("mousedown", function () {
-  if (this.textContent === placeholderText) {
-    this.textContent = "";
-    this.classList.remove("placeholder");
-    this.classList.add("input-cursor");
-  }
-  // this.classList.add("input");
-
-  // const handleMouseUp = () => {
-  //   this.classList.remove("input");
-  //   document.removeEventListener("mouseup", handleMouseUp);
-  // };
-
-  // document.addEventListener("mouseup", handleMouseUp);
-});
-
-// Display placeholder when content is empty on blur
+// Add the place holder content on blur
 searchComponent.addEventListener("blur", function () {
   if (this.textContent === "") {
-    this.classList.add("placeholder");
     this.textContent = placeholderText;
+    this.classList.add("placeholderText");
   }
   this.classList.remove("input-cursor");
 });
 
-// Function to handle checkbox click
-function handleCheckboxClick(event) {
-  const checkboxId = event.target.getAttribute("data-id");
-  console.log(`Checkbox with ID ${checkboxId} was clicked`);
+// change default behaviour of the ennter key
+searchComponent.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    handleEnterKey();
+  }
+});
+
+function handleEnterKey() {
+  // Your logic when Enter key is pressed
+  // For example, prevent the default behavior entirely or do something else
 }
 
 //dropdown
@@ -69,13 +49,12 @@ btnD.addEventListener("click", function () {
 
 // Attach click event listeners to each checkbox
 document.addEventListener("DOMContentLoaded", function () {
-  const checkboxContainers = document.querySelectorAll(".links-container");
-
-  checkboxContainers.forEach((container) => {
+  const checkboxContainer = document.querySelectorAll(".links-container");
+  checkboxContainer.forEach((container) => {
     const checkbox = container.querySelector(".checkbox");
     const notCompletedIcon = container.querySelector("#not-completed-icon");
-    const completed = container.querySelector("#completed");
     const loading = container.querySelector("#loading");
+    const completed = container.querySelector("#completed");
 
     checkbox.addEventListener("change", function () {
       if (checkbox.checked) {
@@ -84,13 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
           completed.classList.remove("hidden");
           loading.classList.add("hidden");
-        }, 200); // Show completed icon after 200 milliseconds
+        }, 200);
       } else {
         completed.classList.add("hidden");
-        notCompletedIcon.classList.remove("hidden");
-        loading.classList.remove("hidden");
-
         loading.classList.add("hidden");
+        notCompletedIcon.classList.remove("hidden");
       }
     });
   });
@@ -125,7 +102,7 @@ function updateProgressBarAndCheckbox() {
   completionCount.textContent = `${numChecked}/5 Completed`;
 }
 
-//checkbox
+//checkbox to change the active div on click
 
 const checkboxGroups = document.querySelectorAll(".checkbox-group");
 
@@ -154,16 +131,16 @@ function toggleMoreDiv(checkboxes, moreDivs, linksContainers, index) {
 }
 
 // more div toggle
-function showMoreDiv(moreDiv) {
-  moreDiv.classList.remove("hidden");
+function showMoreDiv(moreDivs) {
+  moreDivs.classList.remove("hidden");
 }
 
-function hideMoreDiv(moreDiv) {
-  moreDiv.classList.add("hidden");
+function hideMoreDiv(moreDivs) {
+  moreDivs.classList.add("hidden");
 }
 
-function changeLinksContainerColor(linksContainer, colorClass) {
-  linksContainer.classList.toggle("color", colorClass !== "");
+function changeLinksContainerColor(linksContainers, colorClass) {
+  linksContainers.classList.toggle("color", colorClass !== "");
 }
 
 // icon toggle

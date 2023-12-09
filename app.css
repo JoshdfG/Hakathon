@@ -55,18 +55,15 @@ nav {
   border: 1px solid #e1e1e1;
   background: var #303030;
 }
-/* .input:active {
-  border: 2px solid #fff;
-  background: #303030;
-} */
+
 .input:active {
   border: 2px solid #fff;
   background: #303030;
 }
 
 .content {
-  /* position: relative; */
-  margin: 0 auto;
+  width: 95%;
+  padding: 6px 0px 0px 6px;
 }
 
 .input-cursor::after {
@@ -113,12 +110,15 @@ nav {
   .lg-img {
     display: none;
   }
+  .content {
+    width: 95%;
+    width: calc(45vw - 40px);
+    margin: 0 auto;
+  }
   .bell {
     display: flex;
     padding: 6px;
     align-items: center;
-    /* gap: 8px; */
-    /* margin-right: 6px; */
     align-self: stretch;
     border-radius: 8px;
   }
@@ -130,28 +130,25 @@ nav {
     justify-content: space-between;
     gap: 8px;
     flex: 1 0 0;
-    /* width: 100%, 350px; */
   }
   .dropdown {
     position: absolute;
     top: 90;
     right: 12;
-    display: flex;
-    width: calc(70vw - 40px);
-    /* max-width: 320px; */
-    padding: 6px 0px;
+    width: calc(90vw - 40px);
+    transition: 0.3s linear;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 4px;
     border-radius: 14px;
     border: 1px solid var(--stroke-s-50, #dbdbdb);
     background: var(--White, #fff);
-
-    /* Drop Shadow */
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
   }
   .content {
     position: relative;
+    width: 95%;
   }
   .dc-lg {
     display: none;
@@ -167,16 +164,11 @@ nav {
     justify-content: center;
     align-items: center;
     border-radius: 6px;
-    /* gap: 8px; */
     background: #36fba1;
     border: none;
     color: rgba(0, 0, 0, 0.4);
     text-align: center;
-    leading-trim: both;
-    text-edge: cap;
     outline: none;
-    /* Text-12/medium */
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -199,7 +191,6 @@ nav {
     width: 100%;
     padding: 0px 8px;
     align-items: center;
-    /* justify-content: center; */
     gap: 6px;
     flex: 1 0 0;
     border-radius: 8px;
@@ -209,8 +200,6 @@ nav {
   .input-p {
     color: #b5b5b5;
     height: 18px;
-    /* Text-13/medium */
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -221,28 +210,17 @@ nav {
     padding: 12px 8px 12px 16px;
     gap: 16px;
   }
-  /* .img {
-    height: 36px;
-    width: 36px;
-    color: var(--clr-light);
-  } */
+
   .text {
     display: flex;
-
-    /* flex-direction: column; */
     align-items: center;
     justify-content: space-between;
     gap: 16px;
     align-self: stretch;
   }
-  /* .tet {
-    padding: 2px;
-  } */
+
   .text p {
     color: var(--font-light, #e3e3e3);
-
-    /* Text-13/medium */
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -254,7 +232,6 @@ nav {
 
   .neext {
     margin-top: 16px;
-    /* height: 108px; */
     background-color: #fff;
     padding: 12px 8px 12px 16px;
   }
@@ -264,9 +241,6 @@ nav {
   }
   .next-text h3 {
     color: var(--font-dark, #303030);
-
-    /* Text-14/semi bold */
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -274,9 +248,6 @@ nav {
   }
   .next-text p {
     color: var(--font-dark, #303030);
-
-    /* Text-13/regular */
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -288,7 +259,6 @@ nav {
   padding: 6px 12px;
   align-items: center;
   gap: 8px;
-
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: #fff;
@@ -314,7 +284,6 @@ nav {
 }
 .progress p {
   color: #303030;
-  font-family: Inter;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -324,7 +293,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 8px;
-  /* padding: 0px 8px; */
 }
 .progress-container {
   position: relative;
@@ -340,7 +308,7 @@ nav {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #222; /* Initial progress bar color */
+  background-color: #222;
   border-radius: 5px;
   transition: width 0.3s ease-in-out;
 }
@@ -363,22 +331,13 @@ nav {
   }
   .dropdown {
     position: absolute;
-    /* width: 160px; */
-    /* top: 70px; */
     top: 90;
-    right: 12;
-    /* display: flex; */
-    width: calc(70vw - 40px);
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* left: 75%; */
+    width: calc(40vw - 40px);
     margin: 0 auto;
     border-radius: 6px;
     background: #fff;
     z-index: 1000;
     display: flex;
-    /* width: 320px; */
     padding: 6px 0px;
     flex-direction: column;
     align-items: flex-start;
@@ -390,11 +349,9 @@ nav {
   .dc-p {
     color: var(--clr-light);
     leading-trim: both;
-    text-edge: cap;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -412,9 +369,6 @@ nav {
     background: #303030;
     color: rgba(0, 0, 0, 0.4);
     text-align: center;
-    leading-trim: both;
-    text-edge: cap;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -452,9 +406,6 @@ nav {
     border: none;
     color: rgba(0, 0, 0, 0.4);
     text-align: center;
-    leading-trim: both;
-    text-edge: cap;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -486,7 +437,6 @@ nav {
   .input-p {
     color: #b5b5b5;
     height: 18px;
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -507,7 +457,6 @@ nav {
     background: #1a1a1a;
     margin-inline: auto;
     color: #e3e3e3;
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -539,7 +488,6 @@ nav {
   }
   .next-text h3 {
     color: var(--font-dark, #303030);
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -547,7 +495,6 @@ nav {
   }
   .next-text p {
     color: var(--font-dark, #303030);
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -559,15 +506,12 @@ nav {
   display: flex;
   align-items: center;
   color: #303030;
-  /* background-color: #f3f3f3; */
   align-self: stretch;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  font-family: Inter;
   font-size: 13px;
   font-style: normal;
   padding: 8px;
-
   font-weight: 500;
   line-height: 140%;
 }
@@ -576,9 +520,7 @@ nav {
 }
 .more {
   color: var(--font-mid-2, #616161);
-  font-family: Inter;
   font-size: 13px;
-  /* background-color: #f3f3f3; */
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   font-style: normal;
@@ -655,7 +597,6 @@ nav {
   align-items: center;
   cursor: pointer;
   border-radius: 8px;
-  /* border: 1px solid #b5b5b5; */
   transition: all 100ms ease-in;
 }
 @keyframes spin {
@@ -673,10 +614,6 @@ nav {
   animation-timing-function: linear;
 }
 
-/* .check-box:focus {
-  outline: 2px solid #005bd3;
-  outline-offset: 1px;
-} */
 .check-box:focus .not-completed-icon circle {
   fill: #d9d9d9;
   stroke-dasharray: 0 0;
@@ -698,14 +635,12 @@ nav {
     position: absolute;
     top: 65;
     right: 10;
-    /* width: calc(20vw - 40px); */
-    width: 270px;
+    width: 260px;
     margin: 0 auto;
     border-radius: 6px;
     background: #fff;
     z-index: 1000;
     display: flex;
-    padding: 6px 0px;
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
@@ -735,10 +670,7 @@ nav {
     border: none;
     color: rgba(0, 0, 0, 0.4);
     text-align: center;
-    leading-trim: both;
     cursor: pointer;
-    text-edge: cap;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -758,11 +690,9 @@ nav {
   .dc-p {
     color: var(--clr-light);
     leading-trim: both;
-    text-edge: cap;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -779,19 +709,13 @@ nav {
     background: #303030;
     color: rgba(0, 0, 0, 0.4);
     text-align: center;
-    leading-trim: both;
-    text-edge: cap;
-
-    /* Text-12/medium */
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 130%; /* 15.6px */
+    line-height: 130%;
   }
   .bella {
     display: flex;
-    /* justify-content: flex-end; */
     align-items: center;
     justify-content: center;
     gap: 8px;
@@ -808,7 +732,6 @@ nav {
     gap: 6px;
     flex: 1 0 0;
     border-radius: 8px;
-    /* border: 1px solid #616161; */
     background: #303030;
   }
   .btn-d {
@@ -822,15 +745,10 @@ nav {
     border: none;
     color: rgba(0, 0, 0, 0.4);
     text-align: center;
-    leading-trim: both;
-    text-edge: cap;
-
-    /* Text-12/medium */
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 130%; /* 15.6px */
+    line-height: 130%;
   }
 
   .input {
@@ -847,8 +765,6 @@ nav {
   .input-p {
     color: #b5b5b5;
     height: 18px;
-    /* Text-13/medium */
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -864,7 +780,6 @@ nav {
     background: #1a1a1a;
     margin-inline: auto;
     color: #e3e3e3;
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
@@ -902,7 +817,6 @@ nav {
   }
   .next-text p {
     color: var(--font-dark, #303030);
-    font-family: Inter;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -922,13 +836,11 @@ nav {
 .dc-l {
   display: flex;
   flex-wrap: wrap;
-  padding: 4px 12px 4px 8px;
-  width: calc(60vw - 40px);
+  padding: 0px 8px;
+  margin: 0 auto;
   align-items: center;
-  align-self: stretch;
   border-radius: 8px;
   background: #f1f1f1;
-  width: 100%;
 }
 .dc-l .mark {
   margin-left: auto;
@@ -948,9 +860,6 @@ nav {
   border: none;
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
-  leading-trim: both;
-  text-edge: cap;
-  font-family: Inter;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
