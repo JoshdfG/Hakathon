@@ -639,6 +639,7 @@ nav {
   display: none;
 }
 .stores {
+  cursor: pointer;
   display: flex;
   padding: 6px;
   align-items: center;
@@ -653,14 +654,16 @@ nav {
   box-shadow: 0px 0px 1.1px rgba(0, 0, 0, 0.1);
 }
 .list {
-  padding-left: 3px;
-  padding-right: 3px;
+  cursor: pointer;
+  padding-left: 6px;
+  padding-right: 6px;
   border-bottom: 0.75px solid #e1e1e1;
   box-shadow: 0px 0px 1.1px rgba(0, 0, 0, 0.1);
 }
 .list2 {
-  padding-left: 3px;
-  padding-right: 3px;
+  cursor: pointer;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .email p {
@@ -886,6 +889,7 @@ nav {
   width: 100%;
 }
 .dc-l {
+  cursor: pointer;
   display: flex;
   flex-wrap: wrap;
   padding: 0px 8px;
@@ -902,6 +906,7 @@ nav {
   font-weight: bold;
 }
 .btnz {
+  cursor: pointer;
   display: flex;
   height: 28px;
   padding: 9px 5px 10px 5px;
