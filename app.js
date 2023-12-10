@@ -40,11 +40,25 @@ const dropDown = document.querySelector(".dropdown");
 const btnDc = document.querySelector(".btn-dc");
 const btnD = document.querySelector(".btn-d");
 
-btnDc.addEventListener("click", function () {
+// Toggle dropdown visibility when buttons are clicked
+btnDc.addEventListener("click", function (e) {
+  e.stopPropagation();
   dropDown.classList.toggle("hidden");
 });
-btnD.addEventListener("click", function () {
+
+btnD.addEventListener("click", function (e) {
+  e.stopPropagation();
   dropDown.classList.toggle("hidden");
+});
+
+// Add a click event listener to the document
+document.addEventListener("click", function (e) {
+  const isClickedInsideDropdown = dropDown.contains(e.target);
+
+  // If the click is outside the dropdown, hide it
+  if (!isClickedInsideDropdown) {
+    dropDown.classList.add("hidden");
+  }
 });
 
 // Attach click event listeners to each checkbox
