@@ -39,7 +39,7 @@ body {
   font-style: normal;
   background-color: var(--clr-bg);
   scroll-behavior: smooth;
-  transition: var(--transition);
+  transition: all 50ms ease-in-out;
 }
 
 nav {
@@ -634,9 +634,11 @@ nav {
 }
 .check-box:hover .not-completed-icon circle {
   stroke-dasharray: 0 0;
+  transition: all 100ms ease-in-out;
 }
 .hidden {
   display: none;
+  transition: all 100ms ease-in-out;
 }
 .stores {
   cursor: pointer;
