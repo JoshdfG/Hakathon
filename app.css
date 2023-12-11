@@ -925,3 +925,6 @@ nav {
   line-height: 130%;
   margin-right: 4px;
 }
+.dropdown {
+  transition: all 100ms ease-in-out;
+}
